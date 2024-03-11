@@ -1,5 +1,5 @@
 import actionTypes from '../constants/actionTypes';
-//import runtimeEnv from '@mars/heroku-js-runtime-env'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
 const env = process.env;
 
 function userLoggedIn(username) {
