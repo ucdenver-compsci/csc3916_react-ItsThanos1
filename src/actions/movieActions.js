@@ -44,13 +44,13 @@ export function fetchMovie(movieId) {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        return response.json()
+        return response.json();
       })
       .then((res) => {
-        dispatch(movieFetched(res.movie));
+        dispatch(movieFetched(res.movie)); // Make sure res.movie contains the movie data
       })
       .catch((e) => console.log(e));
-    }
+    };
   }
 
 export function fetchMovies() {
