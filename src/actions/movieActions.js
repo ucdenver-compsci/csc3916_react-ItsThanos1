@@ -70,3 +70,34 @@ export function fetchMovies() {
         }).catch((e) => console.log(e));
     }
 }
+
+export function createReview(movieId, review) {
+    return dispatch => {
+      return fetch(`${env.REACT_APP_API_URL}/reviews`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+          movieId: movieId,
+          username: review.username,
+          review: review.review,
+          rating: review.rating
+        }),
+        mode: 'cors'
+      })
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then((res) => {
+        // Optionally, you can fetch the updated movie details after creating the review
+        dispatch(fetchMovie(movieId));
+      })
+      .catch((e) => console.log(e));
+    };
+  }
