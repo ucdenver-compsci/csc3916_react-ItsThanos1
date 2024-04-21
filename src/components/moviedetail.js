@@ -106,7 +106,12 @@ class MovieDetail extends Component {
                   rows={3}
                   name="review"
                   value={this.state.review.review}
-                  onChange={this.handleInputChange}
+                  onChange={(event) => this.setState(prevState => ({
+                    review: {
+                      ...prevState.review,
+                      review: event.target.value
+                    }
+                  }))}
                 />
               </Form.Group>
               <Button variant="primary" onClick={this.handleSubmit}>
