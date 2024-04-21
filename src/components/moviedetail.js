@@ -82,7 +82,7 @@ class MovieDetail extends Component {
               ))}
           </Card.Body>
           <Card.Body>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="reviewRating">
                 <Form.Label>Rating</Form.Label>
                 <Form.Control
@@ -114,7 +114,7 @@ class MovieDetail extends Component {
                   }))}
                 />
               </Form.Group>
-              <Button variant="primary" onClick={this.handleSubmit}>
+              <Button variant="primary" type="submit">
                 Submit Review
               </Button>
             </Form>
