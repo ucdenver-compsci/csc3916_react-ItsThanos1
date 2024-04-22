@@ -8,7 +8,7 @@ import { Image } from 'react-bootstrap';
 class MovieDetail extends Component {
   constructor(props) {
     super(props);
-    this.updateReview=this.updateReview.bind(this)
+    this.handleInputChange=this.handleInputChange.bind(this)
     this.state = {
       review: {
         username: localStorage.getItem('username'),
@@ -116,7 +116,7 @@ class MovieDetail extends Component {
                   rows={3}
                   name="review"
                   value={this.state.review.review}
-                  onChange={this.updateReview}
+                  onChange={this.handleInputChange}
                 />
               </Form.Group>
               <Button variant="primary" type="submit">
