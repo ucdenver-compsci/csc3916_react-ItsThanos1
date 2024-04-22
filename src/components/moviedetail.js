@@ -106,7 +106,7 @@ class MovieDetail extends Component {
                   rows={3}
                   name="review"
                   value={this.state.review.review}
-                  onChange={this.handleInputChange}
+                  onBlur={this.handleInputChange}
                 />
               </Form.Group>
               <Button variant="primary" type="submit">
