@@ -40,15 +40,21 @@ class MovieDetail extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { dispatch } = this.props;
-    dispatch(createReview(this.props.movieId, this.state.review));
-    this.setState({
-      review: {
-        username: localStorage.getItem('username'),
-        review: '',
-        rating: 0
-      }
-    });
-  }
+    dispatch(createReview(this.props.movieId, this.state.review))
+      .then(() => {
+        // Reset the form fields
+        this.setState({
+          review: {
+            username: localStorage.getItem('username'),
+            review: '',
+            rating: 0
+          }
+        }, () => {
+          // Refresh the page after the form fields are reset
+          window.location.reload();
+        });
+      });
+  };
 
   render() {
     

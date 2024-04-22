@@ -94,10 +94,6 @@ export function createReview(movieId, review) {
         }
         return response.json();
       })
-      .then((res) => {
-        // Optionally, you can fetch the updated movie details after creating the review
-        dispatch(fetchMovie(movieId));
-      })
       .catch((e) => console.log(e));
     };
   }
