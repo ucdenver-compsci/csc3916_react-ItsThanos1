@@ -51,10 +51,7 @@ class MovieDetail extends Component {
   }
 
   render() {
-    const DetailInfo = () => {
-      if (!this.props.selectedMovie) {
-        return <div>Loading....</div>;
-      }
+    
       return (
         <Card>
           <Card.Header>Movie Detail</Card.Header>
@@ -118,10 +115,10 @@ class MovieDetail extends Component {
             </Form>
           </Card.Body>
         </Card>
-      );
-    };
+      )
+    
 
-    return <DetailInfo />;
+   
   }
 }
 
