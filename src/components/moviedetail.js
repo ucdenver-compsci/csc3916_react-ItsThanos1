@@ -24,6 +24,15 @@ class MovieDetail extends Component {
     }
   }
 
+  updateReview(event){
+    let updateReview = Object.assign({}, this.state.review);
+
+    updateReview[event.target.id] = event.target.value;
+    this.setState({
+        review: updateReview
+    });
+}
+
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState(prevState => ({
@@ -106,7 +115,7 @@ class MovieDetail extends Component {
                   rows={3}
                   name="review"
                   value={this.state.review.review}
-                  onBlur={this.handleInputChange}
+                  onChange={this.updateReview}
                 />
               </Form.Group>
               <Button variant="primary" type="submit">
