@@ -25,14 +25,7 @@ class MovieDetail extends Component {
     }
   }
 
-  updateReview(event){
-    let updateReview = Object.assign({}, this.state.review);
-
-    updateReview[event.target.id] = event.target.value;
-    this.setState({
-        review: updateReview
-    });
-}
+  
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
